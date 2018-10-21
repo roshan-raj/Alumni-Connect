@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" [routerLinkActive]="['active']" routerLink="/user">
+        <span style="display: inline-block; margin-left: 10px;">Alumni Connect </span>
+    </a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">      
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" [ngClass]="{'show':navbarOpen }">
+        <ul class="nav navbar-nav ml-auto" style="margin-right: 40px;">
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleNavbar()" routerLink="/login" [routerLinkActive]="['active','act-class']">Sign In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleNavbar()" routerLink="/register" [routerLinkActive]="['active','act-class']">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contact-us" [routerLinkActive]="['active','act-class']">Contact Us</a>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ username }}</a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a href="#" class="dropdown-item" (click)="logout();">Sign out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

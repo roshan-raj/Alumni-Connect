@@ -2,6 +2,11 @@
     cursor: pointer;
 }
 
+li:hover {
+    border-left: 2px solid black;
+    background-color: lightgrey;
+}
+
 .act-class {
     border-bottom: 1px solid black;
 }

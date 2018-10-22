@@ -4,7 +4,7 @@
     </a>
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()">      
         <span class="navbar-toggler-icon"></span>
-        </button>
+    </button>
     <div class="collapse navbar-collapse" [ngClass]="{'show':navbarOpen }">
         <ul class="nav navbar-nav ml-auto" style="margin-right: 40px;">
             <li class="nav-item">
@@ -20,7 +20,7 @@
                 <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ username }}</a>
                 <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="#">My Profile</a>
-                    <a href="#" class="dropdown-item" (click)="logout();">Sign out</a>
+                    <a href="#" class="dropdown-item" (click)="logout()">Sign out</a>
                 </div>
             </li>
         </ul>

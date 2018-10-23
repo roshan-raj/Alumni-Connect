@@ -17,9 +17,9 @@
                 <a class="nav-link" routerLink="/contact-us" [routerLinkActive]="['active','act-class']">Contact Us</a>
             </li>
             <li ngbDropdown class="nav-item dropdown">
-                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ username }}</a>
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" [routerLinkActive]="['active','act-class']" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ username }}</a>
                 <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" routerLink="/profile">My Profile</a>
                     <a href="#" class="dropdown-item" (click)="logout()">Sign out</a>
                 </div>
             </li>

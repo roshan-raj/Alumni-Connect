@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     UserhomeComponent,
     FooterComponent,
     BsNavbarComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

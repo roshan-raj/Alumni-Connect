@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class UserService {
+
+  @Output() loginStatusEmitter: EventEmitter<String> = new EventEmitter()
+  loginStatus = "false";
 
   constructor(private _http:HttpClient) { }
 
@@ -14,6 +17,8 @@ export class UserService {
   }
 
   login(body:any){
+    this.loginStatus = "true"
+    this.loginStatusEmitter.emit(this.loginStatus);
     return this._http.post('http://127.0.0.1:3000/users/login',body,{
       observe:'body',
       withCredentials:true,
@@ -30,6 +35,8 @@ export class UserService {
   }
 
   logout(){
+    this.loginStatus = "false"
+    this.loginStatusEmitter.emit(this.loginStatus);
     return this._http.get('http://127.0.0.1:3000/users/logout',{
       observe:'body',
       withCredentials:true,

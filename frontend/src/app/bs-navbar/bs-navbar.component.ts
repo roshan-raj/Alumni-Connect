@@ -9,8 +9,10 @@ import { Router } from '@angular/router';
 })
 export class BsNavbarComponent implements OnInit {
 
-  username:String='';
+  username:String='USERNAME';
+  LoginStatus:String;
   constructor(private _user:UserService, private _router:Router) { 
+    this.LoginStatus = this._user.loginStatus;
     this._user.user()
     .subscribe(
       data=>this.addName(data),
@@ -22,6 +24,9 @@ export class BsNavbarComponent implements OnInit {
     this.username = data.username;
   }
   ngOnInit() {
+    this._user.loginStatusEmitter.subscribe(status => {
+      this.LoginStatus = status;
+    })
   }
 
   logout(){

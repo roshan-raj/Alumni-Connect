@@ -16,10 +16,17 @@ app.use(cors({
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://root:root12345@ds237363.mlab.com:37363/alumni-connect');
+mongoose.connect('mongodb://root:root12345@ds237363.mlab.com:37363/alumni-connect', function(err){
+    if (!err) {
+        console.log("Database successfully connected");
+    }
+});
 
-// mongoose.connect('mongodb://localhost:27017/alumni-connect'); //for working with the project in offline mode
-
+// mongoose.connect('mongodb://localhost:27017/alumni-connect', function(err) {
+//     if (!err) {
+//         console.log("Database successfully connected");
+//     }
+// }); 
 
 //passport
 var passport = require('passport');

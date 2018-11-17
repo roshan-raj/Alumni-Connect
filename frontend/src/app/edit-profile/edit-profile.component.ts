@@ -43,15 +43,15 @@ export class EditProfileComponent implements OnInit {
   }
 
   edit(){
-    if(!this.editForm.valid || (this.editForm.controls.password.value != this.editForm.controls.cpass.value)){
-      console.log('Invalid Form'); return;
-    }
+    // if(!this.editForm.valid || (this.editForm.controls.password.value != this.editForm.controls.cpass.value)){
+    //   console.log('Invalid Form'); return;
+    // }
 
-    this._userService.edit(JSON.stringify(this.editForm.value))
-    .subscribe(
-      data=> {console.log(data); this._router.navigate(['/profile']);},
-      error=>console.error(error)
-    )
+    // this._userService.edit(JSON.stringify(this.editForm.value))
+    // .subscribe(
+    //   data=> {console.log(data); this._router.navigate(['/profile']);},
+    //   error=>console.error(error)
+    // )
     // console.log(JSON.stringify(this.editForm.value));
   }
 

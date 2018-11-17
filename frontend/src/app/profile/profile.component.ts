@@ -10,6 +10,9 @@ export class ProfileComponent implements OnInit {
   username:String='USERNAME';
   email:String="email@alumni.com"
   creation_dt:String="just born"
+  usn:String="--not added--"
+  phone:String="--not added--"
+  profession:String="--not added--"
   constructor(private _user:UserService) { 
     this._user.user()
     .subscribe(
@@ -22,6 +25,9 @@ export class ProfileComponent implements OnInit {
     this.username = data.username;
     this.email = data.email;
     this.creation_dt = data.creation_dt;
+    this.usn = data.usn;
+    this.phone = data.phone;
+    this.profession = data.profession;
   }
 
   ngOnInit() {

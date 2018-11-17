@@ -43,13 +43,13 @@
           <div class="col-md-8">
               <div class="tab-content profile-tab" id="myTabContent">
                   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <form class="form-style">
+                        <form class="form-style" [formGroup]="editForm">
                       <div class="row">
                           <div class="col-md-6">
                               <label>USN</label>
                           </div>
                           <div class="col-md-6">
-                              <input type="text" name="usn" placeholder="-MT-------">
+                              <input formControlName="usn" type="text" name="usn" placeholder="-MT-------">
                           </div>
                       </div>
                       <div class="row">
@@ -73,7 +73,7 @@
                               <label>Phone</label>
                           </div>
                           <div class="col-md-6">
-                              <input type="text" name="phone" placeholder="Enter your phone number">
+                              <input formControlName="phone" type="text" name="phone" placeholder="Enter your phone number">
                           </div>
                       </div>
                       <div class="row">
@@ -81,10 +81,10 @@
                               <label>Profession</label>
                           </div>
                           <div class="col-md-6">
-                              <input type="text" name="profession">
+                              <input formControlName="profession" type="text" name="profession">
                           </div>
                       </div>
-                      <button type="submit" class="btnEditProfile col-md-9">Save</button>
+                      <button type="submit" class="btnEditProfile col-md-9" (click)="edit()">Save</button>
                       </form>
                   </div>
               </div>

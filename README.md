@@ -1,5 +1,5 @@
 # Alumni-Connect
-Mini project using MEAN stack.
+Web application to allow old and new students of a university to communicate with each other. Developed using MEAN stack.
 
 # Backend used
 I have used [MLab](https://mlab.com/) to store my database.

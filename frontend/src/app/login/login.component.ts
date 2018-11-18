@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'app-login',
@@ -10,30 +11,33 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm : FormGroup=new FormGroup({
-    email:new FormControl(null,[Validators.email,Validators.required]),
-    password:new FormControl(null, Validators.required)
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl(null, [Validators.email, Validators.required]),
+    password: new FormControl(null, Validators.required)
   });
-  constructor(private _router:Router, private _user:UserService) { }
+  constructor(private _router: Router, private _user: UserService, public toastr: ToastsManager, vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
+  }
 
   ngOnInit() {
   }
 
-  moveToRegister(){
+  moveToRegister() {
     this._router.navigate(['/register']);
   }
 
-  login(){
-    if(!this.loginForm.valid){
-      console.log('Invalid');return;
+  login() {
+    if (!this.loginForm.valid) {
+      console.log('Invalid');
+      return;
     }
 
     // console.log(JSON.stringify(this.loginForm.value));
     this._user.login(JSON.stringify(this.loginForm.value))
-    .subscribe(
-      data=>{console.log(data);this._router.navigate(['/user']);} ,
-      error=>console.error(error)
-    )
+      .subscribe(
+        data => { console.log(data); this._router.navigate(['/user']); },
+        error => this.toastr.error('Invalid Username or Password')
+      )
   }
 
 }

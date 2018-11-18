@@ -15,6 +15,8 @@ import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
-import { error } from 'util';
 
 @Component({
   selector: 'app-contact-us',
@@ -17,7 +16,9 @@ export class ContactUsComponent implements OnInit {
     email: new FormControl(null, [Validators.email, Validators.required]),
     feedback: new FormControl(null, [Validators.required])
   })
-  constructor(private _router: Router, private _userService:UserService) { }
+
+  username:String='';
+  constructor(private _router: Router, private _userService:UserService) {}
 
   ngOnInit() {
   }
@@ -29,7 +30,7 @@ export class ContactUsComponent implements OnInit {
     this._userService.contact(JSON.stringify(this.contactForm.value))
     .subscribe(
       data=> {console.log(data)},
-      error=> console.error(error)
+      error=>console.error(error)
     )
   }
 }

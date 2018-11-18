@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt');
 
 var schema = new Schema({
     ename : {type:String, require:true},
@@ -9,4 +8,4 @@ var schema = new Schema({
     feedback:{type:Date, require:true}
 });
 
-module.exports = mongoose.model('contact',schema);
+module.exports = mongoose.model('Contact',schema);

@@ -25,7 +25,6 @@ async function addToDB(req, res) {
 }
 
 router.get('/',function(req,res,next){
-  // return res.status(200).json(req.post);
   Post.find((err,docs) => {
     if(!err) {res.send(docs);}
     else {console.log('Err'+ JSON.stringify(err, undefined, 2));  }

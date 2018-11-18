@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Post = require('../models/contact');
+var Contact = require('../models/contact');
 
 router.post('/contact', function (req, res, next) {
   addToDB(req, res);
@@ -24,11 +24,11 @@ async function addToDB(req, res) {
   }
 }
 
-router.get('/',function(req,res,next){
-  Contact.find((err,docs) => {
-    if(!err) {res.send(docs);}
-    else {console.log('Err'+ JSON.stringify(err, undefined, 2));  }
-  })
-});
+// router.get('/',function(req,res,next){
+//   Contact.find((err,docs) => {
+//     if(!err) {res.send(docs);}
+//     else {console.log('Err'+ JSON.stringify(err, undefined, 2));  }
+//   })
+// });
 
 module.exports = router;

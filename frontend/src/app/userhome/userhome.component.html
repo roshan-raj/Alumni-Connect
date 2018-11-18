@@ -3,8 +3,8 @@
     <div class="two-col">
       <div class="col1">
         <select formControlName="uname" type="text" id="uname">
-          <option value="volvo">Post As ?</option>
-          <option value={{username}}>{{username}}</option>
+          <option value="Anonymus" selected>Post As ?</option>
+          <option value={{username}} >{{username}}</option>
         </select>
       </div>
       <div class="col1">
@@ -27,7 +27,7 @@
   <div class="card" *ngFor="let post of _userService.posts">
     <h2><u>{{post.title}} </u></h2>
     <p>Post by: {{post.uname}}</p>
-    <p> <em>{{post.creation_dt}}</em></p>
+    <p> <em>{{post.creation_dt | date: 'fullDate'}}</em></p>
     <p>{{post.content}}</p>
   </div>
 </div>

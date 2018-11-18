@@ -16,9 +16,9 @@
                         {{username}}
                     </h5>
                     <h6>
-                        Web Developer and Designer
+                        {{email}}
                     </h6>
-                    <p class="proile-rating">Class Of : <span>2019</span></p>
+                    <p class="proile-rating">Class Of : <span>{{classof}}</span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -29,9 +29,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <input type="submit" class="profile-edit-btn" routerLink="/edit-profile"  name="btnAddMore" value="Edit Profile" />
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -75,15 +75,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p>+91  {{phone}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Profession</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p> {{profession}}</p>
+                                <p>{{phone}}</p>
                             </div>
                         </div>
                     </div>
@@ -93,7 +85,7 @@
                                 <label>Day Joined</label>
                             </div>
                             <div class="col-md-6">
-                                <p>{{creation_dt.substring(0, 10)}}</p>
+                                <p>{{creation_dt | date: 'mediumDate'}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -101,7 +93,7 @@
                                 <label>Branch Studied</label>
                             </div>
                             <div class="col-md-6">
-                                <p>CSE</p>
+                                <p>{{branch}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -109,7 +101,7 @@
                                 <label>Date Of Birth</label>
                             </div>
                             <div class="col-md-6">
-                                <p>02/12/1997</p>
+                                <p>{{dob}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -117,15 +109,7 @@
                                 <label>Location</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Mangalore</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Currently In</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>India</p>
+                                <p>{{location}}</p>
                             </div>
                         </div>
                     </div>

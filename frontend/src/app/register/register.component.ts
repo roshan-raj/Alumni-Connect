@@ -14,7 +14,13 @@ export class RegisterComponent implements OnInit {
     email:new FormControl(null,[Validators.email,Validators.required]),
     username:new FormControl(null,Validators.required),
     password:new FormControl(null,Validators.required),
-    cpass:new FormControl(null,Validators.required)
+    cpass:new FormControl(null,Validators.required),
+    dob:new FormControl(null,Validators.required),
+    branch:new FormControl(null,Validators.required),
+    usn:new FormControl(null,Validators.required),
+    phone:new FormControl(null,Validators.required),
+    location:new FormControl(null,Validators.required),
+    classof:new FormControl(null,Validators.required),
   })
   constructor(private _router:Router, private _userService:UserService) { }
 

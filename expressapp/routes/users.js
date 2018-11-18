@@ -17,9 +17,12 @@ async function addToDB(req, res) {
     email: req.body.email,
     username: req.body.username,
     password: User.hashPassword(req.body.password),
-    usn: "4PA15CS073",
-    phone: "9999999999",
-    profession: "Web Developer By birth",
+    usn: req.body.usn,
+    phone: req.body.phone,
+    branch: req.body.branch,
+    dob: req.body.dob,
+    location: req.body.location,
+    classof: req.body.classof,
     creation_dt: Date.now()
   });
 

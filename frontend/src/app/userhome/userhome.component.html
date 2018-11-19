@@ -25,10 +25,12 @@
           </div>
           <br>
           <br>
+          <div class="row">
           <div className="input-field" style="float: right;">
             <button className="btn pink lighten-1 z-depth-0" class="btn btn-primary" (click)="createPost()">Post</button>
             <input type="reset" class="btn btn-warning" value="Clear" />
           </div>
+        </div>
         </form>
       </div>
       <div class="card cardSmall" *ngFor="let post of _userService.posts">

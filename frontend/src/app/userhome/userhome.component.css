@@ -2,33 +2,47 @@
   width: 75%;
 }
 
+.cardBig {
+  background-color: #cccccc;
+  opacity: 0.8;
+}
+
+.cardSmall {
+  opacity: 1.0;
+  z-index: 100;
+}
+
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+h2 {
+  color: blue;
+}
+
 .card {
-  background-color: white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 20px;
 }
 
 @media screen and (max-width: 800px) {
-  .leftcolumn {
-    width: 100%;
+
+  .leftcolumn,
+  .rightcolumn {
+    width: 98%;
     padding: 2;
   }
 }
 
-.two-col {
-  overflow: hidden;
-  /* Makes this div contain its floats */
+.inputter {
+  width: 400px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
 }
 
-.two-col .col1,
-.two-col .col2 {
-  width: 49%;
-}
-
-.two-col .col1 {
-  float: left;
-}
-
-.two-col .col2 {
-  float: right;
+input[type=text]:focus {
+  width: 250px;
 }

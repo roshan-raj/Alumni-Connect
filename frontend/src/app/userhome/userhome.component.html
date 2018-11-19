@@ -30,7 +30,7 @@
       <hr>
       <div class="card cardSmall" *ngFor="let post of _userService.posts">
         <h2><u>{{post.title}} </u></h2>
-        <p>Post by: {{post.uname}}</p>
+        <p>Posted by {{post.uname}}</p>
         <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
         <p>{{post.content}}</p>
       </div>
@@ -38,12 +38,12 @@
   </div>
   <div class="rightcolumn">
     <div class="card cardBig">
-      <h3>New Posts</h3>
+      <h3 style="text-align: center;">New Posts</h3>
       <div *ngFor="let post of _userService.posts.slice().reverse(); let i=index">
         <div *ngIf="i<3">
           <div class="card">
-            <h2><u>{{post.title}} </u></h2>
-            <p>Post by: {{post.uname}}</p>
+            <h4>{{post.title}}</h4>
+            <p>Posted by {{post.uname}}</p>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@
 
 .cardBig {
   background-color: #cccccc;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .cardSmall {
@@ -37,12 +37,13 @@ h2 {
   }
 }
 
-.inputter {
-  width: 400px;
+input[type=text] {
+  float: right;
+  width: 50%;
   -webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;
 }
 
 input[type=text]:focus {
-  width: 250px;
+  width: 75%;
 }

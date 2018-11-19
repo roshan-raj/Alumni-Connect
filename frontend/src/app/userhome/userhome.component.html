@@ -1,33 +1,36 @@
 <div class="row">
   <div class="leftcolumn">
     <div class="card cardBig">
-      <form className="white" [formGroup]="postForm">
-        <div class="row">
-          <div class="col-md-4 .col-xs-4 inputter">
-            <select formControlName="uname" type="text" id="uname">
-              <option value="Anonymus" selected>Post As ?</option>
-              <option value={{username}}>{{username}}</option>
-            </select>
-          </div>
-          <br>
-          <div class="col-md-4 col-xs-4 inputter" style="width: 100px;">
-            <div className="input-field">
-              <input formControlName="title" type="text" placeholder="Title " id="title" />
+      <div class="card cardSmall">
+        <form className="white" [formGroup]="postForm">
+          <div class="row">
+            <div class="col-md-4">
+              <select formControlName="uname" type="text" id="uname">
+                <option value="Anonymus" selected>Post As ?</option>
+                <option value={{username}}>{{username}}</option>
+              </select>
+            </div>
+            <br>
+            <div class="col-md-4" style="width: 100px;">
+              <div className="input-field">
+                <input formControlName="title" type="text" placeholder="Title " id="title" />
+              </div>
             </div>
           </div>
           <br>
-          <div class="col-md-4 col-xs-4 inputter">
-            <div className="input-field">
+          <div class="row">
+            <div className="input-field col-md-12">
               <input formControlName="content" type="text" id="content" placeholder="Share your experience" className="materialize-textarea">
             </div>
           </div>
-        </div>
-        <br>
-        <div className="input-field" style="float: right;">
-          <button className="btn pink lighten-1 z-depth-0" class="btn btn-primary" (click)="createPost()">Post</button>
-          <input type="reset" class="btn btn-warning" value="Clear" />
-        </div>
-      </form>
+          <br>
+          <br>
+          <div className="input-field" style="float: right;">
+            <button className="btn pink lighten-1 z-depth-0" class="btn btn-primary" (click)="createPost()">Post</button>
+            <input type="reset" class="btn btn-warning" value="Clear" />
+          </div>
+        </form>
+      </div>
       <div class="card cardSmall" *ngFor="let post of _userService.posts">
         <h2><u>{{post.title}} </u></h2>
         <p>Post by: {{post.uname}}</p>

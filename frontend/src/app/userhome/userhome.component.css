@@ -37,13 +37,10 @@
   }
 }
 
-/* input[type=text] {
-  float: right;
-  width: 50%;
-  -webkit-transition: width .35s ease-in-out;
-  transition: width .35s ease-in-out;
+textarea {
+  height: 50px;
 }
 
-input[type=text]:focus {
-  width: 75%;
-} */
+textarea:focus {
+  height: 100px;
+}

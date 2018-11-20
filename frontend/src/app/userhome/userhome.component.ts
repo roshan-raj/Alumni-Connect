@@ -45,16 +45,16 @@ export class UserhomeComponent implements OnInit {
     });
   }
 
-
+  invalid: String;
 
   createPost() {
 
     if (!this.postForm.valid) {
-      console.log('Invalid Form'); return;
+      this.invalid = "Please enter data"; return;
     }
     this._userService.post(JSON.stringify(this.postForm.value))
       .subscribe(
-        data => { console.log(data); this.refreshPostList(); },
+        data => { console.log(data); this.refreshPostList(); this.invalid = "     ";},
         error => console.error(error)
       )
   }

@@ -2,8 +2,62 @@
   <div class="leftcolumn">
     <div class="card cardBig">
       <div class="card cardSmall">
-        <form className="white" [formGroup]="postForm">
-          <div class="row">
+          <h3 style="margin-bottom: 25px; text-align: center;"> Create New Post</h3>
+
+        <form role="form" [formGroup]="postForm">
+            <div class="form-group">
+              <label class="col-md-2" style="display:inline-block;"> Post as: </label>
+              <select class="form-control col-md-3" style="display:inline-block;" formControlName="uname" type="text" id="uname">
+                <option value="Anonymus" selected>Anonymus</option>
+                <option value={{username}}>{{username}}</option>
+              </select>
+              <input class="form-control col-md-6" style="display:inline-block; float: right;" formControlName="title" type="text" id="title" name="title" placeholder="Title">
+            </div>
+            <!-- <div class="form-group"> -->
+                <!-- <input formControlName="title" type="text" class="form-control" id="title" name="title" placeholder="Title"> -->
+                <!-- <input formControlName="title" type="text" placeholder="Title " id="title" /> -->
+            <!-- </div>  -->
+            <div class="form-group">
+                <textarea formControlName="content" type="textarea" rows="4" class="form-control" id="content" name="content" placeholder="Share your experience"></textarea>
+                <!-- <input formControlName="content" type="text" id="content" placeholder="Share your experience" className="materialize-textarea"> -->
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" style="width:20%;" (click)="createPost()">Post</button>
+                <input type="reset" class="btn btn-warning" style="width:20%;" value="Clear" />
+            </div>
+        </form>
+      </div>
+      <hr>
+      <div class="card cardSmall" *ngFor="let post of _userService.posts">
+        <h2><u>{{post.title}} </u></h2>
+        <p>Posted by {{post.uname}}</p>
+        <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
+        <p>{{post.content}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card cardBig">
+      <h3 style="text-align: center;">New Posts</h3>
+      <div *ngFor="let post of _userService.posts.slice().reverse(); let i=index">
+        <div *ngIf="i<3">
+          <div class="card">
+            <h4>{{post.title}}</h4>
+            <p>Posted by {{post.uname}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="row">
             <div class="col-md-4">
               <select formControlName="uname" type="text" id="uname">
                 <option value="Anonymus" selected>Post As ?</option>
@@ -28,28 +82,4 @@
           <div className="input-field" style="float: right;">
             <button className="btn pink lighten-1 z-depth-0" class="btn btn-primary" (click)="createPost()">Post</button>
             <input type="reset" class="btn btn-warning" value="Clear" />
-          </div>
-        </form>
-      </div>
-      <div class="card cardSmall" *ngFor="let post of _userService.posts">
-        <h2><u>{{post.title}} </u></h2>
-        <p>Post by: {{post.uname}}</p>
-        <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
-        <p>{{post.content}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="rightcolumn">
-    <div class="card cardBig">
-      <h3>New Posts</h3>
-      <div *ngFor="let post of _userService.posts.slice().reverse(); let i=index">
-        <div *ngIf="i<3">
-          <div class="card">
-            <h2><u>{{post.title}} </u></h2>
-            <p>Post by: {{post.uname}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          </div> -->

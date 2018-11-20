@@ -18,9 +18,9 @@
   padding-left: 20px;
 }
 
-h2 {
+/* h2 {
   color: blue;
-}
+} */
 
 .card {
   padding: 20px;
@@ -37,7 +37,7 @@ h2 {
   }
 }
 
-input[type=text] {
+/* input[type=text] {
   float: right;
   width: 50%;
   -webkit-transition: width .35s ease-in-out;
@@ -46,4 +46,4 @@ input[type=text] {
 
 input[type=text]:focus {
   width: 75%;
-}
+} */

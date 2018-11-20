@@ -11,19 +11,19 @@
                 <option value="Anonymus" selected>Anonymus</option>
                 <option value={{username}}>{{username}}</option>
               </select>
-              <!-- <input class="form-control col-md-8" style="display:inline-block;" formControlName="title" type="text" id="title" name="title" placeholder="Title"> -->
+              <input class="form-control col-md-6" style="display:inline-block; float: right;" formControlName="title" type="text" id="title" name="title" placeholder="Title">
             </div>
-            <div class="form-group">
-                <input formControlName="title" type="text" class="form-control" id="title" name="title" placeholder="Title">
+            <!-- <div class="form-group"> -->
+                <!-- <input formControlName="title" type="text" class="form-control" id="title" name="title" placeholder="Title"> -->
                 <!-- <input formControlName="title" type="text" placeholder="Title " id="title" /> -->
-            </div> 
+            <!-- </div>  -->
             <div class="form-group">
                 <textarea formControlName="content" type="textarea" rows="4" class="form-control" id="content" name="content" placeholder="Share your experience"></textarea>
                 <!-- <input formControlName="content" type="text" id="content" placeholder="Share your experience" className="materialize-textarea"> -->
             </div>
             <div class="form-group">
-                <button className="btn pink lighten-1 z-depth-0" class="btn btn-primary" (click)="createPost()">Post</button>
-                <input type="reset" class="btn btn-warning" value="Clear" />
+                <button class="btn btn-primary" style="width:20%;" (click)="createPost()">Post</button>
+                <input type="reset" class="btn btn-warning" style="width:20%;" value="Clear" />
             </div>
         </form>
       </div>

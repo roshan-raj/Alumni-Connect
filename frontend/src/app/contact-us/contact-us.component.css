@@ -29,3 +29,11 @@
     background: #fb3958;
     color: white;
 }
+
+div.container {
+    background-color: #FAFAFA;
+    padding: 20px;
+    /* margin: 10px 0px 60px; */
+    border: 1px solid GREY;
+    opacity:0.9;
+}

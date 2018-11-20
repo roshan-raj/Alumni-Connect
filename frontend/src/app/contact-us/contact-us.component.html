@@ -5,15 +5,25 @@
     <div class="row">
         <div class="col-md-8">
             <form [formGroup]="contactForm">
-                <input class="form-control" formControlName="name" placeholder="Name..." /><br />
-                <input class="form-control" formControlName="phone" placeholder="Phone..." /><br />
-                <input class="form-control" formControlName="email" placeholder="E-mail..." /><br />
-                <textarea class="form-control" formControlName="feedback" placeholder="How can we help you?" style="height:150px;"></textarea><br />
-                <input class="btn btn-primary" (click)="sendfeedback()" type="submit" value="Send" /><br /><br />
+                <div class="form-group">
+                    <input class="form-control" formControlName="name" placeholder="Name..." />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="phone" placeholder="Phone..." />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="email" placeholder="E-mail..." />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" formControlName="feedback" placeholder="How can we help you?" style="height:150px;"></textarea>
+                </div>    
+                <div class="form-group text-center">
+                    <input class="btn btn-primary" style="width:20%;" (click)="sendfeedback()" type="submit" value="Send" />
+                </div>
             </form>
         </div>
         <div class="col-md-4">
-            <b>Get In Touch: </b> <br /> Phone: <a href="tel: +917795481747">+91 7795481747 </a> <br /> E-mail: <a href="mailto:roshan139154@gmail.com">roshan139154@gmail.com</a><br />
+            <b>Get In Touch: </b> <br /> Phone: <a href="tel: +917795481747">+91 779 548 1747 </a> <br /> E-mail: <a href="mailto:roshan139154@gmail.com">roshan139154@gmail.com</a><br />
             <br /><br />
             <b>Where to Find Us: </b><br /> MITE College, <br /> Badaga Mijar<br /> Moodabidri - 574225<br /> Phone: +91 9379762931<br />
             <a href="mailto:mite.ac@gmail.com">mite.ac@gmail.com</a><br />

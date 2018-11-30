@@ -1,5 +1,5 @@
 .register {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, crimson, #d158488f);
     margin-top: 3%;
     padding: 3%;
 }
@@ -72,7 +72,7 @@
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
-    background: #0062cc;
+    background: crimson;
     color: #fff;
     font-weight: 600;
     width: 50%;
@@ -82,7 +82,7 @@
 .register .nav-tabs {
     margin-top: 3%;
     border: none;
-    background: #0062cc;
+    background: crimson;
     border-radius: 1.5rem;
     width: 28%;
     float: right;
@@ -103,7 +103,7 @@
 
 .register .nav-tabs .nav-link.active {
     width: 100px;
-    color: #0062cc;
+    color: crimson;
     border: 2px solid #0062cc;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;

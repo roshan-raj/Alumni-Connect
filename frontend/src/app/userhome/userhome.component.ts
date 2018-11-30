@@ -11,8 +11,6 @@ import { Post } from '../post.model';
 })
 export class UserhomeComponent implements OnInit {
 
-
-
   uname: String = '--not added--';
   title: String = "--not added--"
   content: String = "--not added--"
@@ -35,6 +33,9 @@ export class UserhomeComponent implements OnInit {
   addName(data) {
     this.username = data.username;
   }
+
+
+
   ngOnInit() {
     this.refreshPostList();
   }
@@ -54,8 +55,8 @@ export class UserhomeComponent implements OnInit {
     }
     this._userService.post(JSON.stringify(this.postForm.value))
       .subscribe(
-        data => { console.log(data); this.refreshPostList(); this.invalid = "     ";},
-        error => console.error(error)
+        data => { console.log(data); this.refreshPostList(); this.invalid = "     "; },
+        error => this.invalid = "Please enter data"
       )
   }
 

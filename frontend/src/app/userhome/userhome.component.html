@@ -21,7 +21,7 @@
           </div>
           <div class="form-group">
             <button class="btn btn-primary" style="width:20%;" (click)="createPost()">Post</button>
-            <input type="reset" class="btn btn-warning" style="width:20%;" value="Clear" />
+            <button type="reset" class="btn btn-warning" style="width:20%;" value="Clear">Clear</button>
           </div>
         </form>
       </div>
@@ -38,7 +38,7 @@
     <div class="card cardBig">
       <h3 style="text-align: center;">New Posts</h3>
       <div *ngFor="let post of _userService.posts.slice().reverse(); let i=index">
-        <div *ngIf="i<3">
+        <div *ngIf="i<4">
           <div class="card">
             <h4>{{post.title}}</h4>
             <p>Posted by {{post.uname}}</p>

@@ -27,10 +27,10 @@
       </div>
       <hr>
       <div class="card cardSmall" *ngFor="let post of _userService.posts">
-        <h2><u>{{post.title}} </u></h2>
+        <h2 style="font-family: 'Ubuntu Mono', monospace;"><u>{{post.title}} </u></h2>
         <p>Posted by {{post.uname}}</p>
         <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
-        <p>{{post.content}}</p>
+        <p style="font-family: 'Montserrat', sans-serif; text-align: justify; text-justify: inter-word;">{{post.content}}</p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <div *ngFor="let post of _userService.posts.slice().reverse(); let i=index">
         <div *ngIf="i<4">
           <div class="card">
-            <h4>{{post.title}}</h4>
+            <h4 style="font-family: 'Ubuntu Condensed', sans-serif;">{{post.title}}</h4>
             <p>Posted by {{post.uname}}</p>
           </div>
         </div>

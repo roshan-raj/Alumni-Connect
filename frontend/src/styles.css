@@ -1,41 +1,126 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    padding-top: 80px;
-    margin-bottom: 60px;
-    /* Margin bottom by footer height */
-    background-image:url('assets/alumni-wallpaperOld.jpg');
-    height: 100%; 
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  padding-top: 80px;
+  margin-bottom: 60px;
+  /* Margin bottom by footer height */
+  background-image: url('assets/alumni-wallpaperOld.jpg');
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #c63939;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #c63939;
-  }
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c63939;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c63939;
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+app-root {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+  display: block;
+}
+
+.myLogo {
+  display: block;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  margin-left: -50px;
+  font-size: 20px;
+  color: crimson;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+.loader {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 0;
+}
+
+.loader-item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-left: 2px;
+  background-color: rgba(236, 56, 56, 0.61);
+  color: crimson;
+  animation-duration: 2000ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-iteration-count: infinite;
+}
+
+.loader-item:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.loader-item:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.loader-item:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.loader-item:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.loader-item:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+.loader-item:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+.loader--fade .loader-item {
+  animation-name: fade;
+  animation-duration: 1000ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

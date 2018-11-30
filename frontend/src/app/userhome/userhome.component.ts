@@ -23,7 +23,7 @@ export class UserhomeComponent implements OnInit {
   })
 
   username: String = '';
-  constructor(private _userService: UserService, private _router: Router) {
+  constructor(public _userService: UserService, public _router: Router) {
     this._userService.user()
       .subscribe(
         data => this.addName(data),

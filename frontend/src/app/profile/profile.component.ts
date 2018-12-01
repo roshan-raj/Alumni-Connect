@@ -1,5 +1,6 @@
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -16,11 +17,11 @@ export class ProfileComponent implements OnInit {
   branch:String="--not added--"
   location:String="--not added--"
   classof:String="--not added--"
-  constructor(private _user:UserService) { 
+  constructor(private _user:UserService, _userService: UserService, public _router:Router) { 
     this._user.user()
     .subscribe(
       data=>this.userDetails(data),
-      error=>console.log("Couldn't get user details")
+      error => this._router.navigate(['/login']) 
     )
   }
 

@@ -51,6 +51,14 @@ export class UserService {
     })
   }
 
+  profile(){
+    return this._http.get('http://127.0.0.1:3000/users/user',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    })
+  }
+
   getPosts(){
     return this._http.get('http://127.0.0.1:3000/posts/',{
       observe:'body',

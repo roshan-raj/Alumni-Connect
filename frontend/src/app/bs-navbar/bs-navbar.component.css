@@ -14,3 +14,9 @@ li:hover {
 .custom {
   cursor: pointer;
 }
+
+img {
+  width: 3%;
+  height: 1%;
+  display: inline-block;
+}

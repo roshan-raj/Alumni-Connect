@@ -55,8 +55,8 @@ export class UserhomeComponent implements OnInit {
     }
     this._userService.post(JSON.stringify(this.postForm.value))
       .subscribe(
-        data => { console.log(data); this.refreshPostList(); this.invalid = "     "; },
-        error => this.invalid = "Please enter data"
+        data => { console.log(data); this.refreshPostList(); this.invalid = "Post Updated Successfully"; },
+        error => this.invalid = "Please enter the Data!"
       )
   }
 

@@ -16,6 +16,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminComponent } from './admin/admin.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BsNavbarComponent,
     ContactUsComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    AdminComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

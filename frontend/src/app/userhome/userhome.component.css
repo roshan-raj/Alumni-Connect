@@ -20,7 +20,7 @@
 .card {
   padding: 20px;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 800px) {

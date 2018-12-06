@@ -16,9 +16,11 @@
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" formControlName="feedback" placeholder="How can we help you?" style="height:150px;"></textarea>
-                </div>    
+                <span class="correct"> {{ correct }}</span>
+                </div>   
                 <div class="form-group text-center">
                     <input class="btn btn-primary" style="width:20%;" (click)="sendfeedback()" type="submit" value="Send" />
+                    <input class="btn btn-secondary" style="width:20%" type="reset" value="Clear" />
                 </div>
             </form>
         </div>

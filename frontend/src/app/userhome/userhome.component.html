@@ -26,14 +26,18 @@
         </form>
       </div>
       <hr>
-      <div class="card cardSmall" *ngFor="let post of _userService.posts">
-        <h2 style="font-family: 'Ubuntu Mono', monospace;"><u>{{post.title}} </u></h2>
-        <p>Posted by {{post.uname}}</p>
-        <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
-        <p style="font-family: 'Montserrat', sans-serif; text-align: justify; text-justify: inter-word;">{{post.content}}</p>
-        <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i>
-        </button>
+
+      <div *ngFor="let post of _userService.posts.slice().reverse();">
+        <div class="card cardSmall">
+          <h2 style="font-family: 'Ubuntu Mono', monospace;"><u>{{post.title}} </u></h2>
+          <p>Posted by {{post.uname}}</p>
+          <p> <em>{{post.creation_dt | date: 'shortTime'}}, {{post.creation_dt | date: 'mediumDate'}} </em></p>
+          <p style="font-family: 'Montserrat', sans-serif; text-align: justify; text-justify: inter-word;">{{post.content}}</p>
+          <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i>
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
   <div class="rightcolumn">

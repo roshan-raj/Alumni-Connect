@@ -1,13 +1,13 @@
-<h1 class="mb-3 font-weight-normal" style="text-align: center;">Hello!</h1>
-<h2 class="h5 mb-3 font-weight-normal">Welcome to Alumni-Connect</h2>
+<h1 class="mb-3 font-weight-normal" style="text-align: center;">Welcome Admin!</h1>
+<h2 class="h5 mb-3 font-weight-normal">Login Here</h2>
 <br>
 <form class="form-signin" [formGroup]="loginForm">
   <div class="group">
-    <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"
+    <input formControlName="username" type="text" id="inputusername" class="form-control" placeholder="Username"
       required autofocus>
     <span class="highlight"></span>
     <span class="bar"></span>
-    <label for="inputEmail" class="sr-only">Email address</label>
+    <label for="inputusername" class="sr-only">Email address</label>
   </div>
   <div class="group">
     <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
@@ -19,9 +19,8 @@
   </div>
 
   <div class="form-group" style="text-align:center;">
-    <button class="btn btn=danger btn-block bouncy" style="animation-delay:0.07s; color: white;" type="submit" (click)='login()'>Sign
+    <button class="btn btn=danger btn-block bouncy" style="animation-delay:0.07s; color: white;" type="submit" (click)='adminlogin()'>Sign
       in</button>
-    <span>Don't have an account?</span><a routerLink="/register">Register Now</a>
-    <span>Admin Login </span> <a routerLink="/admin-login">here</a>
+    <span>User login </span> <a routerLink="/login">here</a>
   </div>
 </form>

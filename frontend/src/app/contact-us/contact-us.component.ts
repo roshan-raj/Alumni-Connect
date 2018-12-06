@@ -17,20 +17,24 @@ export class ContactUsComponent implements OnInit {
     feedback: new FormControl(null, [Validators.required])
   })
 
-  username:String='';
-  constructor(private _router: Router, private _userService:UserService) {}
+  username: String = '';
+  constructor(private _router: Router, private _userService: UserService) { }
 
   ngOnInit() {
   }
 
+  correct: string;
+
   sendfeedback() {
     if (!this.contactForm.valid) {
-      console.log('Invalid Form'); return;
+      console.log('Invalid Form');
+      this.correct = "*Please enter all the above feilds!";
+      return;
     }
     this._userService.contact(JSON.stringify(this.contactForm.value))
-    .subscribe(
-      data=> {console.log(data)},
-      error=>console.error(error)
-    )
+      .subscribe(
+        data => { console.log(data); this.correct = "Your feedback has been submitted!"; },
+        error => this.correct = "*Please enter all the above feilds!"
+      )
   }
 }

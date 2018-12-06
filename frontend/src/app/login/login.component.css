@@ -4,7 +4,7 @@
  }
 
  h1 {
-  font-family: 'Rock Salt', cursive;
+   font-family: 'Rock Salt', cursive;
  }
 
  h2 {
@@ -145,6 +145,10 @@
    position: relative;
    background: crimson;
    opacity: 0.8;
+ }
+
+ .form-group {
+   opacity: 1.0
  }
 
  @keyframes bouncy {

@@ -1,0 +1,39 @@
+article,
+figure {
+  display: block;
+}
+
+article .line {
+  /* The dividing line inside of the article is darker: */
+  background-color: #15242a;
+  border-bottom-color: #204656;
+  margin: 1.3em 0;
+}
+
+article {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 2em 0;
+  padding: 50px 20px 100px 40px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  font-weight: 400;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+
+figure {
+  float: right;
+  height: 400px;
+  margin-left: 15px;
+  overflow: hidden;
+  width: 300px;
+  margin-top: -10%;
+}
+
+figure img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}

@@ -208,6 +208,13 @@ h1 span {
   font-size: .45em;
   letter-spacing: 3px;
 }
+h3 span {
+  text-align: center;
+  color: #4E203C;
+  display: block;
+  font-size: .45em;
+  letter-spacing: 3px;
+}
 h1 i {
   font-style: normal;
   text-transform: none;

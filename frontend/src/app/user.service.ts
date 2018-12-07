@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Post } from './post.model';
+import { AllUser } from './alluser.model';
 
 @Injectable()
 export class UserService {
@@ -10,6 +11,7 @@ export class UserService {
   loginStatus = "false";
 
   posts: Post[];
+  alluser: AllUser[];
   constructor(private _http:HttpClient) { }
 
   register(body:any){
@@ -61,6 +63,14 @@ export class UserService {
 
   getPosts(){
     return this._http.get('http://127.0.0.1:3000/posts/',{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    })
+  }
+
+  getAllUsers(){
+    return this._http.get('http://127.0.0.1:3000/users/allusers',{
       observe:'body',
       withCredentials:true,
       headers:new HttpHeaders().append('Content-Type','application/json')

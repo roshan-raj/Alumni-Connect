@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BsNavbarComponent implements OnInit {
 
-  username:String='USERNAME';
+  username:String='Hi Guest!';
   LoginStatus:String;
   constructor(private _user:UserService, private _router:Router) { 
     this.LoginStatus = this._user.loginStatus;

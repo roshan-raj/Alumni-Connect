@@ -16,6 +16,15 @@ div.facts-box {
   bottom: 20px;
 }
 
+.image-size {
+  width: 15%;
+  height: 15%;
+}
+
+h1 {
+  font-family: 'Merienda', cursive;
+}
+
 section div.home-wrapper a {
   position: relative;
   opacity: 1;

@@ -18,17 +18,17 @@ app.use(cors({
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://root:root12345@ds237363.mlab.com:37363/alumni-connect', function(err){
-    if (!err) {
-        console.log("MLab Database successfully connected");
-    }
-});
-
-// mongoose.connect('mongodb://localhost:27017/alumni-connect', function(err) {
+// mongoose.connect('mongodb://root:root12345@ds237363.mlab.com:37363/alumni-connect', function(err){
 //     if (!err) {
-//         console.log("Local Database successfully connected");
+//         console.log("MLab Database successfully connected");
 //     }
-// }); 
+// });
+
+mongoose.connect('mongodb://localhost:27017/alumni-connect', function(err) {
+    if (!err) {
+        console.log("Local Database successfully connected");
+    }
+}); 
 
 //passport
 var passport = require('passport');

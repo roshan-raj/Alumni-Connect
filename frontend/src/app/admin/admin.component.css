@@ -5,8 +5,6 @@ body {
   height: 100vh;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center; 
-  align-items: center;
 }
 .container {
   width: 600px;

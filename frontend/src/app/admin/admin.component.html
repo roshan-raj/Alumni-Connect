@@ -1,4 +1,21 @@
-<div class="container">
+<div class="container" *ngFor="let alluser of _userService.alluser.slice().reverse();">
+  <div class="card">
+    <div class="front">
+      <div class="logo"><span></span></div>
+    </div>
+    <div class="back">
+      <h1>{{alluser.username}}<span>{{alluser.branch}}</span></h1>
+      <h3><span>[{{alluser.usn}}]</span></h3>
+      <ul>
+        <li>{{alluser.phone}}</li>
+        <li>{{alluser.email}}</li>
+        <li>{{alluser.location}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
   <div class="card">
     <div class="front">
       <div class="logo"><span></span></div>
@@ -12,21 +29,4 @@
       </ul>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="card">
-    <div class="front">
-      <div class="logo"><span></span></div>
-    </div>
-    <div class="back">
-      <h1>Helen Parker<span>design <i>&</i> photography</span></h1>
-      <ul>
-        <li>+1-111-111-11-11</li>
-        <li>my-email@email.com</li>
-        <li>Year Of Joining</li>
-      </ul>
-    </div>
-  </div>
-
-</div>
+</div> -->

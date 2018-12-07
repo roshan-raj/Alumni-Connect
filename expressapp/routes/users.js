@@ -60,6 +60,13 @@ router.get('/logout',isValidUser, function(req,res,next){
   return res.status(200).json({message:'Logout Success'});
 })
 
+router.get('/allusers',function(req,res,next){
+  User.find((err,docs) => {
+    if(!err) {res.send(docs);}
+    else {console.log('Err'+ JSON.stringify(err, undefined, 2));  }
+  })
+});
+
 function isValidUser(req,res,next){
   if(req.isAuthenticated()) next();
   else return res.status(401).json({message:'Unauthorized Request'});

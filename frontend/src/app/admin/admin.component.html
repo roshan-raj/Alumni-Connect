@@ -1,16 +1,19 @@
-<div class="container" *ngFor="let alluser of _userService.alluser.slice().reverse();">
-  <div class="card">
-    <div class="front">
-      <div class="logo"><span></span></div>
-    </div>
-    <div class="back">
-      <h1>{{alluser.username}}<span>{{alluser.branch}}</span></h1>
-      <h3><span>[{{alluser.usn}}]</span></h3>
-      <ul>
-        <li>{{alluser.phone}}</li>
-        <li>{{alluser.email}}</li>
-        <li>{{alluser.location}}</li>
-      </ul>
+<div class="heading">
+  <h2>* * * Registered Users * * *</h2>
+</div>
+<div class="padding container">
+  <div class="users-container">
+    <div class="users-card" *ngFor="let alluser of _userService.alluser.slice().reverse();">
+      <div class="users-details">
+        <img class="users-image" src="https://i930.photobucket.com/albums/ad147/tcepser8/tumblr_ll0a7qs4Me1qi2q1so1_r1_500.jpg"
+          alt="" />
+        <div class="users-desc">
+          <p class="users-title">{{alluser.username}}</p>
+          <p> <span class="users-branch">{{alluser.branch}}</span></p>
+          <p> <span class="users-usn">[{{alluser.usn}}]</span></p>
+          <p>Email: <span class="users-uploaderEmail">{{alluser.email}}</span></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

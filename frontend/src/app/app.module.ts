@@ -18,6 +18,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { MainscreenComponent } from './mainscreen/mainscreen.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     ProfileComponent,
     EditProfileComponent,
     AdminComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    MainscreenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <img src="https://i930.photobucket.com/albums/ad147/tcepser8/tumblr_ll0a7qs4Me1qi2q1so1_r1_500.jpg" alt="" />
-  <a class="navbar-brand" [routerLinkActive]="['active']" routerLink="/user">
+  <a class="navbar-brand" [routerLinkActive]="['active']" routerLink="/mainscreen">
     <span style="display: inline-block; margin-left: 10px;">Alumni Connect </span>
   </a>
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
@@ -8,6 +8,9 @@
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{'show':navbarOpen }">
     <ul class="nav navbar-nav ml-auto" style="margin-right: 40px;">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user" [routerLinkActive]="['active','act-class']">New Post</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact-us" [routerLinkActive]="['active','act-class']">Contact Us</a>
       </li>

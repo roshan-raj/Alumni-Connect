@@ -1,0 +1,68 @@
+div.facts-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 50px 10px 50px;
+  -webkit-animation: fadein 3s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 3s;
+  /* Internet Explorer */
+  -o-animation: fadein 3s;
+  /* Opera < 12.1 */
+  animation: fadein 3s;
+  z-index: 1;
+  position: relative;
+  bottom: 20px;
+}
+
+section div.home-wrapper a {
+  position: relative;
+  opacity: 1;
+}
+
+blink,
+.blink {
+  animation: blinker 2s linear infinite;
+}
+
+a.blink:hover {
+  animation: none;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+section.home {
+  padding: 10%;
+  background: rgba(0, 0, 0, 0.7);
+  color: whitesmoke;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 700px) {
+  section.home {
+    margin: 0% 10% 0% 10%;
+  }
+}
+
+div.home-wrapper.text-center {
+  color: white;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

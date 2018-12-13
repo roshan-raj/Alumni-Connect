@@ -5,7 +5,6 @@ import { RegisterComponent } from './register/register.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path:'user',component:UserhomeComponent},
   {path:'contact-us',component:ContactUsComponent},
   {path: 'profile', component:ProfileComponent},
-  {path: 'edit-profile', component:EditProfileComponent},
   {path: 'admin', component:AdminComponent},
   {path: 'admin-login', component:AdminLoginComponent},
   {path: 'mainscreen', component:MainscreenComponent},

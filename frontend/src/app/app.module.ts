@@ -14,7 +14,6 @@ import { FooterComponent } from './footer/footer.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
@@ -31,7 +30,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     BsNavbarComponent,
     ContactUsComponent,
     ProfileComponent,
-    EditProfileComponent,
     AdminComponent,
     AdminLoginComponent,
     MainscreenComponent,

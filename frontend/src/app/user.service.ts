@@ -1,9 +1,10 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter, Directive } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Post } from './post.model';
 import { AllUser } from './alluser.model';
 
+@Directive()
 @Injectable()
 export class UserService {
 

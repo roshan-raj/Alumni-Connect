@@ -1,75 +1,88 @@
-var express = require('express');
-var router = express.Router();
-var User = require('../models/user');
-var passport = require('passport');
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
+import { Router } from 'express';
+const router = Router();
+import { authenticate } from 'passport';
+import User, { hashPassword, find } from '../models/user';
 
-router.post('/register', function (req, res, next) {
-  addToDB(req, res);
+router.post('/register', (req, res, next) => {
+	addToDB(req, res);
 });
-
 
 async function addToDB(req, res) {
-  var user = new User({
-    email: req.body.email,
-    username: req.body.username,
-    password: User.hashPassword(req.body.password),
-    usn: req.body.usn,
-    phone: req.body.phone,
-    branch: req.body.branch,
-    dob: req.body.dob,
-    location: req.body.location,
-    classof: req.body.classof,
-    creation_dt: Date.now()
-  });
+	const {
+		email,
+		username,
+		password,
+		usn,
+		phone,
+		branch,
+		dob,
+		location,
+		classof,
+	} = req.body;
+	const user = new User({
+		email,
+		username,
+		password: hashPassword(password),
+		usn,
+		phone,
+		branch,
+		dob,
+		location,
+		classof,
+		creation_dt: Date.now(),
+	});
 
-  try {
-    doc = await user.save();
-    return res.status(201).json(doc);
-  }
-  catch (err) {
-    return res.status(501).json(err);
-  }
+	try {
+		const doc = await user.save();
+		return res.status(201).json(doc);
+	} catch (err) {
+		return res.status(501).json(err);
+	}
 }
 
-
-router.post('/login',function(req,res,next){
-  passport.authenticate('local', function(err, user, info) {
-    if (err) { return res.status(501).json(err); }
-    if (!user) { return res.status(501).json(info); }
-    req.logIn(user, function(err) {
-      if (err) { return res.status(501).json(err); }
-      return res.status(200).json({message:'Login Success'});
-    });
-  })(req, res, next);
+router.post('/login', (req, res, next) => {
+	authenticate('local', (err, user, info) => {
+		if (err) {
+			return res.status(501).json(err);
+		}
+		if (!user) {
+			return res.status(501).json(info);
+		}
+		req.logIn(user, (err) => {
+			if (err) {
+				return res.status(501).json(err);
+			}
+			return res.status(200).json({ message: 'Login Success' });
+		});
+	})(req, res, next);
 });
 
-router.get('/user',isValidUser,function(req,res,next){
-  return res.status(200).json(req.user);
+router.get('/user', isValidUser, (req, res, next) =>
+	res.status(200).json(req.user),
+);
+
+router.get('/profile', isValidUser, (req, res, next) =>
+	res.status(200).json(req.user),
+);
+
+router.get('/logout', isValidUser, (req, res, next) => {
+	req.logout();
+	return res.status(200).json({ message: 'Logout Success' });
 });
 
-router.get('/profile',isValidUser,function(req,res,next){
-  return res.status(200).json(req.user);
+router.get('/allusers', (req, res, next) => {
+	find((err, docs) => {
+		if (!err) {
+			res.send(docs);
+		} else {
+			console.log(`Err${JSON.stringify(err, undefined, 2)}`);
+		}
+	});
 });
 
-router.get('/logout',isValidUser, function(req,res,next){
-  req.logout();
-  return res.status(200).json({message:'Logout Success'});
-})
-
-router.get('/allusers',function(req,res,next){
-  User.find((err,docs) => {
-    if(!err) {res.send(docs);}
-    else {console.log('Err'+ JSON.stringify(err, undefined, 2));  }
-  })
-});
-
-function isValidUser(req,res,next){
-  if(req.isAuthenticated()) next();
-  else return res.status(401).json({message:'Unauthorized Request'});
+function isValidUser(req, res, next) {
+	if (req.isAuthenticated()) next();
+	else return res.status(401).json({ message: 'Unauthorized Request' });
 }
 
-module.exports = router;
+export default router;

@@ -1,26 +1,26 @@
-var express = require('express');
-var router = express.Router();
-var Contact = require('../models/contact');
+import { Router } from 'express';
+import Contact from '../models/contact';
+const router = Router();
 
-router.post('/contact', function (req, res, next) {
-  addToDB(req, res);
+router.post('/contact', (req, res, _next) => {
+	addToDB(req, res);
 });
 
 async function addToDB(req, res) {
-  var contact = new Contact({
-    name: req.body.name,
-    phone: req.body.phone,
-    email: req.body.email,
-    feedback: req.body.feedback
-  });
+	const { name, phone, email, feedback } = req.body;
+	const contact = new Contact({
+		name,
+		phone,
+		email,
+		feedback,
+	});
 
-  try {
-    doc = await contact.save();
-    return res.status(201).json(doc);
-  }
-  catch (err) {
-    return res.status(501).json(err);
-  }
+	try {
+		const doc = await contact.save();
+		return res.status(201).json(doc);
+	} catch (err) {
+		return res.status(501).json(err);
+	}
 }
 
-module.exports = router;
+export default router;
